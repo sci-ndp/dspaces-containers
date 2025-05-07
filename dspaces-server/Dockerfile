@@ -7,7 +7,7 @@ RUN apt-get update && apt upgrade -y
 RUN apt-get install -y netcat
 
 CMD . /opt/spack-environment/activate.sh \
-    && git clone https://github.com/rdi2dspaces/dspaces \
+    && git clone -b hackathon-deploy https://github.com/sci-ndp/dspaces \
     && mkdir /dspaces/build \
     && cd - \
     && /dspaces/scripts/build-and-run.sh ${REPO_BRANCH} /dspaces /dspaces/build /install/dspaces mpicc mpifort ${OFI_STRING}
